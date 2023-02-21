@@ -29,12 +29,11 @@ def common_handles(full_name_feats, person_to_id_map):
 	for year in full_name_feats.keys():
 		col_sum = np.sum(full_name_feats[year].todense(), axis=0)
 		# print(full_name_feats[year].shape, col_sum.shape)
-		print(np.where(col_sum>1))
 		common_persons[year] = np.where(col_sum>1)[1]
 
 	names_in_all_years = set(common_persons['2017']) & set(common_persons['2018']) & \
 				set(common_persons['2019']) & set(common_persons['2020']) & set(common_persons['2021'])
-	print(names_in_all_years)
+
 	clusters_with_common_handles = {}
 	for year in full_name_feats.keys():
 		rows_containing_common_handles = full_name_feats[year].todense()[:,np.array(list(names_in_all_years))]
@@ -44,7 +43,7 @@ def common_handles(full_name_feats, person_to_id_map):
 
 	id_to_person_map = {ind: per for per, ind in person_to_id_map.items()}
 	person_names = [id_to_person_map[nm] for nm in names_in_all_years]
-	print(clusters_with_common_handles)
+
 	return person_names, clusters_with_common_handles
 
 def account_mentions():

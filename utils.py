@@ -92,20 +92,6 @@ def get_author_info(aut_url_mat, cluster_labels, filtered_df):
 		inds_per_cluster[label].append(index)
 
 	return author_cluster_map, inds_per_cluster
-
-	# attribute_scores = defaultdict(list)
-	# sorted_att_scores = {}
-	# for clus, inds in inds_per_cluster.items():
-	# 	for col in aut_url_mat.todense().transpose():
-	# 		print(col, col.shape)
-	# 		in_cluster_freq = np.sum(col[inds],axis=1).item()
-	# 		full_freq = np.sum(col,axis=1).item()
-	# 		attribute_scores[clus].append(in_cluster_freq/full_freq)
-
-	# 	sorted_att_scores[clus] = np.argsort(attribute_scores[clus])
-	
-	# print(attribute_scores)
-	# print(sorted_att_scores)
 	
 
 
@@ -447,5 +433,4 @@ def get_box_plots(grouping_df, size='big'):
             patch.set(alpha=0.2,linewidth=0.9,edgecolor='k')
 #     figs.supylabel("log_e (count+1)")
     plt.subplots_adjust(top = 0.79, bottom=0.21, hspace=0.5, wspace=0.2, left=0.09)
-    plt.savefig("/Users/pnair/Desktop/maricarmen paper/jc_clusters_"+size+".png",bbox_inches='tight')
     plt.show()
