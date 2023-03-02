@@ -16,5 +16,5 @@ python partial_intersection.py /path_to_connection_comunities/ /path_to_content_
 Then run,
 
 ```
-python joint_clustering.py --communities_path /path/to/communities/ 
+python joint_clustering.py --communities_path /path_to_small_PI_communities/ 
 ```
