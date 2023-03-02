@@ -11,8 +11,3 @@ Then run,
 ```
 python joint_clustering.py --communities_path /path/to/communities/ 
 ```
-
-To-DO:
-
-1. Make the repo public 
-2. Clean up the code
